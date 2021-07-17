@@ -1,5 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
+const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   mode: 'jit',
@@ -7,6 +8,10 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      scale: {
+        15: '.15',
+        25: '.25',
+      },
       spacing: {
         '9/16': '56.25%',
       },
@@ -20,15 +25,26 @@ module.exports = {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: colors.teal,
-        gray: colors.trueGray,
+        primary: {
+          50: '#fcfaf7',
+          100: '#f8f5ef',
+          200: '#eee5d6',
+          300: '#e3d5bd',
+          400: '#ceb68c',
+          500: '#b9975b',
+          600: '#a78852',
+          700: '#8b7144',
+          800: '#6f5b37',
+          900: '#5b4a2d',
+        },
+        gray: colors.warmGray,
         code: {
-          green: '#b5f4a5',
-          yellow: '#ffe484',
-          purple: '#d9a9ff',
-          red: '#ff8383',
-          blue: '#93ddfd',
-          white: '#fff',
+          blue: colors.blueGray[500],
+          keywords: colors.amber[500],
+          attributes: colors.lime[500],
+          comments: colors.trueGray[500],
+          primitives: colors.orange[700],
+          terminal: colors.trueGray[900],
         },
       },
       typography: (theme) => ({
@@ -146,7 +162,19 @@ module.exports = {
     },
   },
   variants: {
+    extend: {
+      textColor: ['selection'],
+      backgroundColor: ['selection'],
+    },
     typography: ['dark'],
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+  plugins: [
+    plugin(function ({ addVariant, e }) {
+      addVariant('selection', ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => `.${e(`selection${separator}${className}`)} ::selection`)
+      })
+    }),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+  ],
 }

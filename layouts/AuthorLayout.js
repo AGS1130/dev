@@ -1,13 +1,17 @@
 import SocialIcon from '@/components/social-icons'
 import Image from '@/components/Image'
 import { PageSeo } from '@/components/SEO'
+import siteMetadata from '@/data/siteMetadata'
 
 export default function AuthorLayout({ children, frontMatter }) {
-  const { name, avatar, occupation, company, email, twitter, linkedin, github } = frontMatter
+  const { name, avatar, occupation, company, twitter, linkedin, github } = frontMatter
 
   return (
     <>
-      <PageSeo title={`About - ${name}`} description={`About me - ${name}`} />
+      <PageSeo
+        title={`About | ${siteMetadata.headerTitle}`}
+        description={`About me | ${siteMetadata.headerTitle}`}
+      />
       <div className="divide-y">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
@@ -27,7 +31,6 @@ export default function AuthorLayout({ children, frontMatter }) {
             <div className="text-gray-500 dark:text-gray-400">{occupation}</div>
             <div className="text-gray-500 dark:text-gray-400">{company}</div>
             <div className="flex pt-6 space-x-3">
-              <SocialIcon kind="mail" href={`mailto:${email}`} />
               <SocialIcon kind="github" href={github} />
               <SocialIcon kind="linkedin" href={linkedin} />
               <SocialIcon kind="twitter" href={twitter} />

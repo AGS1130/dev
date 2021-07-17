@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.prose pre {
+  @apply bg-code-terminal text-white;
+}
+
+.prose code {
+  @apply text-code-keywords;
+}
+
 .remark-code-title {
   @apply px-5 py-3 font-mono text-sm font-bold text-gray-200 bg-gray-700 rounded-t;
 }
@@ -28,5 +36,6 @@
 }
 
 html {
+  @apply selection:bg-primary-500 selection:text-white;
   scroll-behavior: smooth;
 }
