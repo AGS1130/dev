@@ -4,25 +4,11 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link
-            sizes="180x180"
-            rel="apple-touch-icon"
-            href="/static/favicons/apple-touch-icon.png"
-          />
-          <link
-            rel="icon"
-            sizes="32x32"
-            type="image/png"
-            href="/static/favicons/favicon-32x32.png"
-          />
-          <link
-            rel="icon"
-            sizes="16x16"
-            type="image/png"
-            href="/static/favicons/favicon-16x16.png"
-          />
-          <link rel="manifest" href="/static/favicons/site.webmanifest" />
-          <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#b9975b" />
+          <link sizes="180x180" rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
+          <link rel="icon" sizes="32x32" type="image/png" href="/favicons/favicon-32x32.png" />
+          <link rel="icon" sizes="16x16" type="image/png" href="/favicons/favicon-16x16.png" />
+          <link rel="manifest" href="/site.webmanifest" />
+          <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#b9975b" />
           <meta name="msapplication-TileColor" content="#000000" />
           <meta name="theme-color" content="#000000" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />

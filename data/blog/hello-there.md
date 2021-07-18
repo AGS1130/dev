@@ -58,7 +58,7 @@ This template was provided by [Timothy Lin](https://www.timlrx.com/). Go check h
 
 If you are a developer who is looking to get a blog out as quickly as possible, I highly recommend working with this template. It checks off all the standards for quality.
 
-With that said, I intened to use this blog to talk about the latest tools, trends, and frameworks that are available for front end development. I'll also use this to store quick code snippets that could be used in a project.
+With that said, I intend to use this blog to talk about the latest tools, trends, and frameworks that are available for front end development. I'll also use this to store quick code snippets that could be used in a project.
 
 Here's my first snippet:
 

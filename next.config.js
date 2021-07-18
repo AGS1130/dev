@@ -1,12 +1,19 @@
+const withPWA = require('next-pwa')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 
-module.exports = withBundleAnalyzer({
+let config = {
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   eslint: {
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],
+  },
+  pwa: {
+    disable: process.env.NODE_ENV === 'development',
+    mode: 'production',
+    register: true,
+    dest: 'public',
   },
   webpack: (config, { dev, isServer }) => {
     config.module.rules.push({
@@ -38,4 +45,12 @@ module.exports = withBundleAnalyzer({
 
     return config
   },
-})
+}
+
+if (process.env.ANALYZE) {
+  config = withBundleAnalyzer(config)
+} else {
+  config = withPWA(config)
+}
+
+module.exports = config

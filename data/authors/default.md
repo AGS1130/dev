@@ -1,6 +1,6 @@
 ---
 name: Gregory Salinas
-avatar: /static/images/avatar.png
+avatar: /images/avatar.png
 occupation: Front End Developer
 company: Procore Technologies
 github: https://github.com/AGS1130
