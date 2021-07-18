@@ -47,7 +47,7 @@ let config = {
   },
 }
 
-if (process.env.ANALYZE) {
+if (process.env.ANALYZE === 'true') {
   config = withBundleAnalyzer(config)
 } else {
   config = withPWA(config)
