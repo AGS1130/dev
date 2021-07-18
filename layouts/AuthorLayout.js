@@ -9,8 +9,8 @@ export default function AuthorLayout({ children, frontMatter }) {
   return (
     <>
       <PageSeo
-        title={`About | ${siteMetadata.headerTitle}`}
-        description={`About me | ${siteMetadata.headerTitle}`}
+        title={`About | ${siteMetadata.title}`}
+        description={`About me | ${siteMetadata.title}`}
       />
       <div className="divide-y">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">

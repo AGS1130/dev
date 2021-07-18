@@ -1,6 +1,4 @@
 import Github from './github.svg'
-import Facebook from './facebook.svg'
-import Youtube from './youtube.svg'
 import Linkedin from './linkedin.svg'
 import Twitter from './twitter.svg'
 
@@ -8,8 +6,6 @@ import Twitter from './twitter.svg'
 
 const components = {
   github: Github,
-  facebook: Facebook,
-  youtube: Youtube,
   linkedin: Linkedin,
   twitter: Twitter,
 }
