@@ -12,6 +12,8 @@
 /.next/
 /out/
 public/sitemap.xml
+public/sw.js
+public/workbox-*.js
 .vercel
 
 # production
