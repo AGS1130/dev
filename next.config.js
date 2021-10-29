@@ -1,4 +1,5 @@
 const withPWA = require('next-pwa')
+const runtimeCaching = require('next-pwa/cache')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -10,7 +11,9 @@ let config = {
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],
   },
   pwa: {
+    runtimeCaching,
     disable: process.env.NODE_ENV === 'development',
+    buildExcludes: [/middleware-manifest.json$/],
     mode: 'production',
     register: true,
     dest: 'public',
